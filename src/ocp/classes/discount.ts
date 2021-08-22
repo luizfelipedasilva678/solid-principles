@@ -8,3 +8,9 @@ export class FiftyPercentDiscount extends Discount {
     return price - price * this.discount;
   }
 }
+
+export class NoDiscount extends Discount {
+  calculate(price: number): number {
+    return price;
+  }
+}

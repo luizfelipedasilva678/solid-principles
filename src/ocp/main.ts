@@ -7,10 +7,11 @@ import { ShoppingCart } from './classes/shopping-cart';
 import { Persistence } from './classes/persistence';
 import { Messaging } from './services/messaging';
 import { Product } from './classes/products';
-import { FiftyPercentDiscount } from './classes/discount';
+import { FiftyPercentDiscount, NoDiscount } from './classes/discount';
 
 const fifty = new FiftyPercentDiscount();
-const shoppingCart = new ShoppingCart(fifty);
+const noDiscount = new NoDiscount();
+const shoppingCart = new ShoppingCart(noDiscount);
 const messaging = new Messaging();
 const persistence = new Persistence();
 const order = new Order(shoppingCart, messaging, persistence);
